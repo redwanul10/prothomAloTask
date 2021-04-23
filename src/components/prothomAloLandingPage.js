@@ -7,7 +7,13 @@ const ProthomAloLandingPage = () => {
   useEffect(() => {
     fetch("data.json")
       .then((res) => res?.json())
-      .then((data) => setNewsList(data));
+      .then((data) => {
+        // sort posts by sort order
+        const sortedList = data.sort(function (a, b) {
+          return a?.sort - b?.sort;
+        })
+        setNewsList(sortedList);
+      });
   }, []);
 
   const renderNewsBasedOnType = (newsData, index) => {
