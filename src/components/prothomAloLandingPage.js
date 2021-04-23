@@ -3,6 +3,7 @@ import NewsPostCard from "./newsPostCard";
 
 const ProthomAloLandingPage = () => {
   const [newsList, setNewsList] = useState([]);
+  const [sidebarNewsList, setSidebarNewsList] = useState([]);
 
   useEffect(() => {
     fetch("data.json")
@@ -11,8 +12,11 @@ const ProthomAloLandingPage = () => {
         // sort posts by sort order
         const sortedList = data.sort(function (a, b) {
           return a?.sort - b?.sort;
-        })
-        setNewsList(sortedList);
+        });
+        // extract last 2 post for sidebar
+        setNewsList(sortedList.slice(0, sortedList?.length - 2));
+        setSidebarNewsList(sortedList.slice(sortedList.length - 2));
+        
       });
   }, []);
 
@@ -58,9 +62,17 @@ const ProthomAloLandingPage = () => {
               )}
             </div>
           </div>
-          {/* <div className="col-md-3">
-          
-          </div> */}
+          <div className="col-md-12 col-lg-3">
+            <div className="row nestedBorder">
+              {sidebarNewsList.map((newsData, index) => (
+                <NewsPostCard
+                  className="col-lg-12"
+                  newsData={newsData}
+                  noDesc
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </>
