@@ -20,7 +20,7 @@
 	font-size: 13px;
 	line-height: 26px;
 	box-sizing: border-box;
-	padding-right: 11px;
+	// padding-right: 11px;
 	margin-bottom: 0;
 }
 .timestamp {
@@ -36,6 +36,7 @@
 	}
 	.title_and_desc {
 		width: 55%;
+		padding-right: 11px;
 	}
 	.photo {
 		width: 45%;
