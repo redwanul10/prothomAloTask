@@ -64,7 +64,7 @@ const ProthomAloLandingPage = () => {
           <div className="col-md-12 col-lg-3">
             <div className="row nestedBorder">
               <div className="col-md-12">
-                <img src="https://via.placeholder.com/250x200?text=Sidebar+Image" />
+                <img style={{width:"100%"}}src="https://media-eng.dhakatribune.com/uploads/2019/08/nagad-is-set-to-begin-nagad-e-lakhpati-campaign-pic-1567106404728.jpg" />
               </div>
               {sidebarNewsList.map((newsData, index) => (
                 <NewsPostCard
