@@ -16,7 +16,6 @@ const ProthomAloLandingPage = () => {
         // extract last 2 post for sidebar
         setNewsList(sortedList.slice(0, sortedList?.length - 2));
         setSidebarNewsList(sortedList.slice(sortedList.length - 2));
-        
       });
   }, []);
 
@@ -64,6 +63,9 @@ const ProthomAloLandingPage = () => {
           </div>
           <div className="col-md-12 col-lg-3">
             <div className="row nestedBorder">
+              <div className="col-md-12">
+                <img src="https://via.placeholder.com/250x200?text=Sidebar+Image" />
+              </div>
               {sidebarNewsList.map((newsData, index) => (
                 <NewsPostCard
                   className="col-lg-12"
